@@ -1,0 +1,9 @@
+# Ignore system and personal files
+.vscode/
+node_modules/
+.env
+.DS_Store
+*.log
+*.exe
+venv/
+myenv/
