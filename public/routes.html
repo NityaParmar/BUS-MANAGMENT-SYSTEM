@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Routes - CollegeBus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>CollegeBus</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="routes.html" class="active">Bus Routes</a></li>
+            <li><a href="tracking.html">Live Tracking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="complaint.html">Complaints</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h2>Bus Routes to ITM (SLS) Baroda University</h2>
+        </div>
+
+        <div class="routes-container" id="routesList">
+            <!-- Routes will be loaded dynamically -->
+        </div>
+    </main>
+
+    <script>
+        // Bus route data
+        const busRoutes = [
+            { id: 1, start: "Vadodara Airport", end: "ITM (SLS) Baroda University", time: "9:00 AM", driver: "Amit Sharma", contact: "+91 98765 43210" },
+            { id: 2, start: "Fatehgunj", end: "ITM (SLS) Baroda University", time: "9:00 AM", driver: "Ravi Patel", contact: "+91 87654 32109" },
+            { id: 3, start: "Alkapuri", end: "ITM (SLS) Baroda University", time: "9:15 AM", driver: "Rajesh Kumar", contact: "+91 76543 21098" },
+            { id: 4, start: "Manjalpur", end: "ITM (SLS) Baroda University", time: "8:50 AM", driver: "Sunil Mehta", contact: "+91 65432 10987" },
+            { id: 5, start: "Diwalipura", end: "ITM (SLS) Baroda University", time: "9:20 AM", driver: "Vikas Singh", contact: "+91 54321 09876" },
+            { id: 6, start: "Karelibaug", end: "ITM (SLS) Baroda University", time: "8:45 AM", driver: "Anil Joshi", contact: "+91 43210 98765" }
+        ];
+
+        function loadRoutes() {
+            const routesContainer = document.getElementById("routesList");
+            routesContainer.innerHTML = "";
+
+            busRoutes.forEach(bus => {
+                const routeBox = document.createElement("div");
+                routeBox.classList.add("route-box");
+                routeBox.innerHTML = `
+                    <h3>${bus.start} ➝ ${bus.end}</h3>
+                    <p><strong>Departure Time:</strong> ${bus.time}</p>
+                    <p><strong>Driver:</strong> ${bus.driver}</p>
+                    <p><strong>Contact:</strong> <a href="tel:${bus.contact}">${bus.contact}</a></p>
+                `;
+                routesContainer.appendChild(routeBox);
+            });
+        }
+
+        // Load routes on page load
+        loadRoutes();
+    </script>
+
+    <style>
+        .routes-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .route-box {
+            background: white;
+            border: 2px solid #2563eb;
+            border-radius: 10px;
+            padding: 15px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .route-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .route-box p {
+            margin: 5px 0;
+        }
+
+        .route-box a {
+            text-decoration: none;
+            color: #2563eb;
+            font-weight: bold;
+        }
+    </style>
+</body>
+</html>
