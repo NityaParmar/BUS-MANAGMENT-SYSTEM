@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File a Complaint - CollegeBus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2l.64-2.54c.24-.959.24-1.962 0-2.92l-1.07-4.27A3 3 0 0 0 17.66 5H4a2 2 0 0 0-2 2v10h2"/><path d="M14 17H9"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg>
+            <h1>CollegeBus</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="routes.html">Bus Routes</a></li>
+            <li><a href="tracking.html">Live Tracking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="complaint.html" class="active">Complaints</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h2>File a Complaint</h2>
+        </div>
+        <div class="complaint-container">
+            <form class="complaint-form">
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" required>
+                </div>
+                <div class="form-group">
+                    <label for="busRoute">Bus Route</label>
+                    <select id="busRoute" required>
+                        <option value="">Select a route</option>
+                        <option value="route1">Route 1: Campus A to Campus B</option>
+                        <option value="route2">Route 2: Downtown to Campus</option>
+                        <option value="route3">Route 3: Residential Area Loop</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="complaintType">Type of Complaint</label>
+                    <select id="complaintType" required>
+                        <option value="">Select complaint type</option>
+                        <option value="delay">Bus Delay</option>
+                        <option value="behavior">Driver Behavior</option>
+                        <option value="cleanliness">Bus Cleanliness</option>
+                        <option value="technical">Technical Issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date of Incident</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Complaint</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
+<!--
+<html>
+    <head>
+        <title>File a Complaint - CollegeBus</title>
+        <link rel="stylesheet" href="styles.css">
+
+        -->
